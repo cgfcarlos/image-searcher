@@ -24,6 +24,12 @@ export class PhotoComponent {
         this.onProfileClicked = new EventEmitter<string>();
     }
 
+    /**
+     * Displays a dialog with the photo detail in a canvas style
+     *
+     * @param {Photo} photo
+     * @memberof PhotoComponent
+     */
     public openDetail(photo: Photo): void {
         this.dialog.open(PhotoDetailComponent, { data: { photo } });
     }

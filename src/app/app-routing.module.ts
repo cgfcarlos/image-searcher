@@ -8,6 +8,12 @@ const routes: Routes = [
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];
 
+/**
+ * Routing module definition of the application
+ *
+ * @export
+ * @class AppRoutingModule
+ */
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

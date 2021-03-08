@@ -18,7 +18,6 @@ export class HttpInterceptorService implements HttpInterceptor {
     constructor(private toastService: ToastService) {}
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        // TODO: En caso de implementar autenticacion privada comprobar si tenemos un token
         const headers = new HttpHeaders().set('Authorization', `Client-ID ${environment.accessKey}`);
         req = req.clone({ headers });
         return next.handle(req).pipe(

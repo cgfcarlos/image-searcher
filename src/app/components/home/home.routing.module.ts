@@ -6,6 +6,12 @@ const routes: Routes = [
     { path: '', component: HomeComponent }
 ]
 
+/**
+ * Routing definition of home
+ *
+ * @export
+ * @class HomeRoutingModule
+ */
 @NgModule({
     imports: [
         RouterModule.forChild(routes)

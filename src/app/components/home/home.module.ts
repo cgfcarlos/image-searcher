@@ -10,6 +10,12 @@ import { PhotoModule } from '../layouts/photo/photo.module';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home.routing.module';
 
+/**
+ * Module definition of home
+ *
+ * @export
+ * @class HomeModule
+ */
 @NgModule({
     declarations: [
         HomeComponent

@@ -4,6 +4,12 @@ import { FormsModule } from "@angular/forms";
 import { MaterialModule } from "../../modules/material.module";
 import { ToolbarComponent } from "./toolbar.component";
 
+/**
+ * Module definition of toolbar
+ *
+ * @export
+ * @class ToolbarModule
+ */
 @NgModule({
     imports: [
         CommonModule,

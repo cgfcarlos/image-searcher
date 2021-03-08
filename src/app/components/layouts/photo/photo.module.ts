@@ -4,6 +4,12 @@ import { MaterialModule } from "../../../shared/modules/material.module";
 import { PhotoDetailComponent } from "./photo-detail/photo-detail.component";
 import { PhotoComponent } from "./photo.component";
 
+/**
+ * Module definition of photo
+ *
+ * @export
+ * @class PhotoModule
+ */
 @NgModule({
     imports:[
         CommonModule,

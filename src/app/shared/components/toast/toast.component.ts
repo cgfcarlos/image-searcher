@@ -58,6 +58,13 @@ export class ToastComponent implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * Toast config getter
+   *
+   * @readonly
+   * @type {*}
+   * @memberof ToastComponent
+   */
   get config(): any {
     return this._toastConfig;
   }

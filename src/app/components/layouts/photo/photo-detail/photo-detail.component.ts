@@ -2,6 +2,13 @@ import { AfterViewInit, Component, ElementRef, Inject, ViewChild } from "@angula
 import { MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { Photo } from "../../../../core/models/photo";
 
+/**
+ * Photo detail component
+ *
+ * @export
+ * @class PhotoDetailComponent
+ * @implements {AfterViewInit}
+ */
 @Component({
     selector: 'photo-detail',
     templateUrl: './photo-detail.component.html',
@@ -37,29 +44,49 @@ export class PhotoDetailComponent implements AfterViewInit {
         this.draw(this.scale, this.translatePos);
     }
 
-    zoomIn(): void {
+    /**
+     * Zoom in the canvas and redraw image
+     *
+     * @memberof PhotoDetailComponent
+     */
+    public zoomIn(): void {
         this.scale /= this.scaleMultiplier;
         this.draw(this.scale, this.translatePos);
     }
 
-    zoomOut(): void {
+    /**
+     * Zoom out the canvas and redraw image
+     *
+     * @memberof PhotoDetailComponent
+     */
+    public zoomOut(): void {
         this.scale *= this.scaleMultiplier;
         this.draw(this.scale, this.translatePos);
     }
 
-    onMouseDown(event: MouseEvent) {
+    /**
+     * Handles the onMouseDown event in the canvas
+     *
+     * @memberof PhotoDetailComponent
+     */
+    public onMouseDown(event: MouseEvent): void {
         this.mouseDown = true;
         this.startDragOffset.x = event.clientX - this.translatePos.x;
         this.startDragOffset.y = event.clientY - this.translatePos.y;
     }
 
-    onDragged(event: MouseEvent) {
+    /**
+     * Handles the drag event in the canvas
+     *
+     * @memberof PhotoDetailComponent
+     */
+    public onDragged(event: MouseEvent): void {
         this.translatePos.x = event.clientX - this.startDragOffset.x;
         this.translatePos.y = event.clientY - this.startDragOffset.y;
         this.draw(this.scale, this.translatePos);
     }
 
-    private draw(scale: number, translatePos: { x: number, y: number }) {
+    private draw(scale: number, _translatePos: { x: number, y: number }) {
         const self = this;
         self.context?.setTransform(1, 0, 0, 1, 0, 0);
         // self.context?.translate(translatePos.x, translatePos.y);

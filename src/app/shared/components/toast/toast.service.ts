@@ -5,7 +5,12 @@ import { ToastConfig, ToastData, TOAST_CONFIG_TOKEN } from './toast-config';
 import { ToastRef } from './toast-ref';
 import { ToastComponent } from './toast.component';
 
-
+/**
+ * Service for displaying toasts
+ *
+ * @export
+ * @class ToastService
+ */
 @Injectable({
   providedIn: 'root',
 })

@@ -1,5 +1,11 @@
 import { Component, EventEmitter, Output } from "@angular/core";
 
+/**
+ * Toolbar component with search field
+ *
+ * @export
+ * @class ToolbarComponent
+ */
 @Component({
     selector: 'toolbar',
     styleUrls: ['./toolbar.component.scss'],

@@ -14,6 +14,13 @@ const DEFAULT_SCROLL_POSITION: ScrollPosition = {
   cH: 0
 };
 
+/**
+ * Infinite scroll directive
+ *
+ * @export
+ * @class InfiniteScrollDirective
+ * @implements {AfterViewInit}
+ */
 @Directive({
   selector: '[infinite-scroll]'
 })

@@ -18,11 +18,11 @@ _NOTA*: Se planteó hacer manualmente el zoom de las imágenes mediante canvas g
 Angular Material a partir de un `theme` customizado ver `theme.scss`
 
 ### Rutas
-- `/home` Ruta por defecto que carga las imágenes más recientes, se puede consultar el detalle de una imagen y que dispone de un buscador para consultar imágenes a partir de un filtro (lazy load)
-- `/user/:id` Ruta que muestra el detalle de un usuario que dispone de 3 rutas hijas 
--- `/photos` Muestra las fotos de un usuario
--- `/liked` Muestra las fotos marcadas como "gustadas" por el usuario
--- `/collections` Muestra las colecciones de fotos de un usuario
+- `/home` Ruta por defecto que carga las imágenes más recientes, se puede consultar el detalle de una imagen y que dispone de un buscador para consultar imágenes a partir de un filtro (lazy load)  
+- `/user/:id` Ruta que muestra el detalle de un usuario que dispone de 3 rutas hijas  
+-- `/photos` Muestra las fotos de un usuario  
+-- `/liked` Muestra las fotos marcadas como "gustadas" por el usuario  
+-- `/collections` Muestra las colecciones de fotos de un usuario  
 
 ### Manejo de errores
 El manejo de errores se delega en un interceptor http que controla la respuesta del API y muestra un "toast" en caso de recibir un error

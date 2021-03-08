@@ -23,7 +23,6 @@ export class InfiniteScrollDirective implements AfterViewInit {
 
   private userScrolledDown$!: Observable<any>;
 
-
   private requestOnScroll$!: Observable<any>;
 
   @Input()
@@ -50,7 +49,6 @@ export class InfiniteScrollDirective implements AfterViewInit {
   private streamScrollEvents() {
     this.userScrolledDown$ = this.scrollEvent$.pipe(
       map((e: any): ScrollPosition => {
-        console.log(e);
         return {
           sH: e.target.scrollingElement.scrollHeight,
           sT: e.target.scrollingElement.scrollTop,
@@ -73,17 +71,15 @@ export class InfiniteScrollDirective implements AfterViewInit {
 
     this.requestOnScroll$.pipe(
       exhaustMap(() => this.scrollCallback())
-    ).subscribe((data) => { console.log(data) }, (err) => console.log(err));
+    ).subscribe(() => { });
 
   }
 
   private isUserScrollingDown = (positions: any) => {
-    console.log(positions);
     return positions[0].sT < positions[1].sT;
   }
 
   private isScrollExpectedPercent = (position: any) => {
-    console.log(position);
     return ((position.sT + position.cH) / position.sH) > (this.scrollPercent / 100);
   }
 

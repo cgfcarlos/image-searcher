@@ -28,12 +28,16 @@ export class UserPhotosComponent {
     }
 
     private processData = (photos: Photo[]) => {
-        console.log(photos);
         this.pageNumber++;
         this.photos = !!photos ? this.photos.concat(photos) : [];
-        console.log(this.photos);
     }
 
+    /**
+     * Search user photos
+     *
+     * @return {*}  {Observable<Photo[]>} user photos
+     * @memberof UserPhotosComponent
+     */
     public searchUserPhotos(): Observable<Photo[]> {
         return this.activatedRoute.paramMap.pipe(switchMap(params => {
             return this.userApi.getUserPhotos(params.get('id'), { page: this.pageNumber, per_page: this.pageSize })

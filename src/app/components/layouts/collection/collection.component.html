@@ -1,24 +1,20 @@
-<mat-card class="mat-elevation-z8">
-    <mat-card-header>
+<mat-card class="card-photo mat-elevation-z8">
+  <mat-card-header>
+    <mat-card-title>
+      {{ collection.title }}
+    </mat-card-title>
+    <mat-card-subtitle>
+      <p *ngIf="collection.description">{{ collection.description }}</p>
+      <p>{{ 'Fotos: ' + collection.total_photos }}</p>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="image-container">
       <img
         mat-card-image
         [src]="collection.cover_photo.urls.regular"
-        alt=""
+        alt="Foto de la coleccion"
       />
-    </mat-card-header>
-    <!-- <mat-card-content>
-      <p>
-        {{ photo.description }}
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <a
-        mat-button
-        [href]="photo.links.download_location"
-        target="_blank"
-        download
-        >Descargar</a
-      >
-    </mat-card-actions> -->
-  </mat-card>
-  
+    </div>
+  </mat-card-content>
+</mat-card>

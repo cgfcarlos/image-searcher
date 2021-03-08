@@ -47,13 +47,11 @@ export class HomeComponent {
     }
 
     private processData = (photos: Photo[], reset = false) => {
-        console.log(photos);
         this.pageNumber++;
         if (reset) {
             this.photos = [];
         }
         this.photos = !!photos ? this.photos.concat(photos) : [];
-        console.log(this.photos);
     }
 
     /**
@@ -93,7 +91,6 @@ export class HomeComponent {
      * @param username username id
      */
     public goToUserProfile(username: string) {
-        console.log(username);
         this.router.navigate(['/users', username, {id: username}]);
     }
 }

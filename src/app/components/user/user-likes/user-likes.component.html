@@ -1,8 +1,19 @@
-<ng-container *ngIf="photos$ | async as photos; else loading">
-    <div class="container" >
-        <photo class="photo" *ngFor="let photo of photos" [photo]="photo" (onProfileClicked)="goToUserProfile($event)"></photo>
-    </div>
+<ng-container *ngIf="photos; else loading">
+  <div
+    class="container"
+    infinite-scroll
+    [scrollCallback]="scrollCallback"
+    [immediateCallback]="false"
+    [scrollPercent]="80"
+  >
+    <photo
+      class="photo"
+      *ngFor="let photo of photos"
+      [photo]="photo"
+      (onProfileClicked)="goToUserProfile($event)"
+    ></photo>
+  </div>
 </ng-container>
 <ng-template #loading>
-    <div></div>
+  <div></div>
 </ng-template>

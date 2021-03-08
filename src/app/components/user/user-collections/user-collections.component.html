@@ -1,5 +1,9 @@
-<ng-container *ngIf="collections$ | async as collections; else loading">
-    <div class="container">
+<ng-container *ngIf="collections; else loading">
+    <div class="container"
+    infinite-scroll
+    [scrollCallback]="scrollCallback"
+    [immediateCallback]="false"
+    [scrollPercent]="80">
         <collection class="collection" *ngFor="let collection of collections" [collection]="collection"></collection>
     </div>
 </ng-container>

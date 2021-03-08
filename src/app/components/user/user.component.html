@@ -13,10 +13,7 @@
             <div class="profile-picture-container">
               <div class="profile-picture-wrapper">
                 <div>
-                  <img
-                    [src]="user.profile_image.large"
-                    alt="Foto de perfil"
-                  />
+                  <img [src]="user.profile_image.large" alt="Foto de perfil" />
                 </div>
               </div>
             </div>
@@ -43,37 +40,46 @@
     <nav mat-tab-nav-bar class="nav">
       <a
         mat-tab-link
-        [routerLink]="['./photos', {id: user.username}]"
-        [matBadge]="user.total_photos"
-        matBadgeOverlap="false"
+        [routerLink]="['./photos', { id: user.username }]"
         routerLinkActive
         #photoRoute="routerLinkActive"
         [active]="photoRoute.isActive"
         [routerLinkActiveOptions]="{ exact: true }"
       >
-      Fotos
+        Fotos
+        <span
+          class="badge-count"
+          [matBadge]="user.total_photos"
+          matBadgeOverlap="false"
+        ></span>
       </a>
       <a
         mat-tab-link
-        [routerLink]="['./liked', {id: user.username}]"
-        [matBadge]="user.total_likes"
-        matBadgeOverlap="false"
+        [routerLink]="['./liked', { id: user.username }]"
         routerLinkActive
         #likedRoute="routerLinkActive"
         [active]="likedRoute.isActive"
       >
-      Likes
+        Likes
+        <span
+          class="badge-count"
+          [matBadge]="user.total_likes"
+          matBadgeOverlap="false"
+        ></span>
       </a>
       <a
         mat-tab-link
-        [routerLink]="['./collections', {id: user.username}]"
-        [matBadge]="user.total_collections"
-        matBadgeOverlap="false"
+        [routerLink]="['./collections', { id: user.username }]"
         routerLinkActive
         #collectionRoute="routerLinkActive"
         [active]="collectionRoute.isActive"
       >
-      Colecciones
+        Colecciones
+        <span
+          class="badge-count"
+          [matBadge]="user.total_collections"
+          matBadgeOverlap="false"
+        ></span>
       </a>
     </nav>
     <router-outlet></router-outlet>

@@ -29,7 +29,7 @@ El manejo de errores se delega en un interceptor http que controla la respuesta 
 
 ### Paginación
 La paginación de las imágenes se establece mediante una directiva `infinite-scroll` que permite gestionar la paginación a través del bind de un método que retorna un `Observable` para poder consultar contra el servidor las siguientes paginas
-- Parámetros
--- `scrollCallback: () => ObservableInput<any>` Callback para paginar los elementos
--- `immediateCallback: boolean = false` Permite realizar la llamada al cargar la vista
--- `scrollPercent: number = 80` Controla en que parte del scroll debería hacer la invocación del callback
+- Parámetros  
+-- `scrollCallback: () => ObservableInput<any>` Callback para paginar los elementos  
+-- `immediateCallback: boolean = false` Permite realizar la llamada al cargar la vista  
+-- `scrollPercent: number = 80` Controla en que parte del scroll debería hacer la invocación del callback  

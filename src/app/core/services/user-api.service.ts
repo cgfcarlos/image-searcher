@@ -45,7 +45,7 @@ export class UserApiService {
      * @memberof UserApiService
      */
     public getUserPhotos(id: string | null, page: Page = { page: 1, per_page: 20 }): Observable<Photo[]> {
-        return this.http.get<Photo[]>(`${environment.url_base}${this.pathUser}/${id}${this.pathPhotos}?page${page.page}&per_page${page.per_page}`);
+        return this.http.get<Photo[]>(`${environment.url_base}${this.pathUser}/${id}${this.pathPhotos}?page=${page.page}&per_page=${page.per_page}`);
     }
 
     /**
@@ -57,7 +57,7 @@ export class UserApiService {
      * @memberof UserApiService
      */
     public getUserLikes(id: string | null, page: Page = { page: 1, per_page: 20 }): Observable<Photo[]> {
-        return this.http.get<Photo[]>(`${environment.url_base}${this.pathUser}/${id}${this.pathLikes}?page${page.page}&per_page${page.per_page}`);
+        return this.http.get<Photo[]>(`${environment.url_base}${this.pathUser}/${id}${this.pathLikes}?page=${page.page}&per_page=${page.per_page}`);
     }
 
     /**
@@ -69,7 +69,7 @@ export class UserApiService {
      * @memberof UserApiService
      */
     public getUserCollections(id: string | null, page: Page = { page: 1, per_page: 20 }): Observable<Collection[]> {
-        return this.http.get<Collection[]>(`${environment.url_base}${this.pathUser}/${id}${this.pathCollections}?page${page.page}&per_page${page.per_page}`);
+        return this.http.get<Collection[]>(`${environment.url_base}${this.pathUser}/${id}${this.pathCollections}?page=${page.page}&per_page=${page.per_page}`);
     }
 
 

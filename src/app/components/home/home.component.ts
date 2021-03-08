@@ -91,6 +91,6 @@ export class HomeComponent {
      * @param username username id
      */
     public goToUserProfile(username: string) {
-        this.router.navigate(['/users', username, {id: username}]);
+        this.router.navigate(['/users', username]);
     }
 }

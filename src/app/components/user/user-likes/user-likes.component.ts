@@ -13,7 +13,7 @@ import { UserApiService } from "src/app/core/services/user-api.service";
 export class UserLikesComponent {
     photos: Photo[] = [];
 
-    pageNumber = 1;
+    pageNumber = 2;
     pageSize = 20;
     scrollCallback!: () => ObservableInput<any>;
 

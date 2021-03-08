@@ -29,11 +29,11 @@ export class ImageApiService {
      * Get a list of photos by query and page filter
      *
      * @param {string} query query
-     * @param {Page} [page={ page: 0, per_page: 20 }] page
+     * @param {Page} [page={ page: 1, per_page: 20 }] page
      * @return {*}  {Observable<Photo[]>} photos
      * @memberof ImageApiService
      */
-    public getPhotosBySearch(query: string, page: Page = { page: 0, per_page: 20 }): Observable<Photo[]> {
+    public getPhotosBySearch(query: string, page: Page = { page: 1, per_page: 20 }): Observable<Photo[]> {
         return this.http.get<ResponseCollection<Photo>>(`${environment.url_base}${this.pathSearch}${this.pathPhotos}?query=${query}&page=${page.page}&per_page=${page.per_page}`)
             .pipe(map(response => response.results));
     }
@@ -41,12 +41,12 @@ export class ImageApiService {
     /**
      * Get default photos by order and page
      *
-     * @param {Page} [page={ page: 0, per_page: 20 }] page
+     * @param {Page} [page={ page: 1, per_page: 20 }] page
      * @param {('latest' | 'oldest' | 'popular')} [order] order
      * @return {*}  {Observable<Photo[]>} photos
      * @memberof ImageApiService
      */
-    public getPhotos(page: Page = { page: 0, per_page: 20 }, order?: 'latest' | 'oldest' | 'popular'): Observable<Photo[]> {
+    public getPhotos(page: Page = { page: 1, per_page: 20 }, order?: 'latest' | 'oldest' | 'popular'): Observable<Photo[]> {
         let query = `?page=${page.page}&per_page=${page.per_page}`;
         if (order) {
             query = `&order_by=${order}`;

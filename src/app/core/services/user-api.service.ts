@@ -40,11 +40,11 @@ export class UserApiService {
      * Get user photos
      *
      * @param {(string | null)} id userId
-     * @param {Page} [page={ page: 0, per_page: 20 }] page
+     * @param {Page} [page={ page: 1, per_page: 20 }] page
      * @return {*}  {Observable<Photo[]>} user photos
      * @memberof UserApiService
      */
-    public getUserPhotos(id: string | null, page: Page = { page: 0, per_page: 20 }): Observable<Photo[]> {
+    public getUserPhotos(id: string | null, page: Page = { page: 1, per_page: 20 }): Observable<Photo[]> {
         return this.http.get<Photo[]>(`${environment.url_base}${this.pathUser}/${id}${this.pathPhotos}?page${page.page}&per_page${page.per_page}`);
     }
 
@@ -52,11 +52,11 @@ export class UserApiService {
      * Get user liked photos
      *
      * @param {(string | null)} id userId
-     * @param {Page} [page={ page: 0, per_page: 20 }] page
+     * @param {Page} [page={ page: 1, per_page: 20 }] page
      * @return {*}  {Observable<Photo[]>} photos
      * @memberof UserApiService
      */
-    public getUserLikes(id: string | null, page: Page = { page: 0, per_page: 20 }): Observable<Photo[]> {
+    public getUserLikes(id: string | null, page: Page = { page: 1, per_page: 20 }): Observable<Photo[]> {
         return this.http.get<Photo[]>(`${environment.url_base}${this.pathUser}/${id}${this.pathLikes}?page${page.page}&per_page${page.per_page}`);
     }
 
@@ -64,11 +64,11 @@ export class UserApiService {
      * Get user collections
      *
      * @param {(string | null)} id userId
-     * @param {Page} [page={ page: 0, per_page: 20 }] page
+     * @param {Page} [page={ page: 1, per_page: 20 }] page
      * @return {*}  {Observable<Collection[]>} collections
      * @memberof UserApiService
      */
-    public getUserCollections(id: string | null, page: Page = { page: 0, per_page: 20 }): Observable<Collection[]> {
+    public getUserCollections(id: string | null, page: Page = { page: 1, per_page: 20 }): Observable<Collection[]> {
         return this.http.get<Collection[]>(`${environment.url_base}${this.pathUser}/${id}${this.pathCollections}?page${page.page}&per_page${page.per_page}`);
     }
 

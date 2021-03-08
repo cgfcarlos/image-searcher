@@ -9,36 +9,17 @@
     <h5 mat-card-subtitle>{{ data.photo.user.username }}</h5>
   </div>
   <div mat-dialog-content class="image-container">
-    <canvas
-      class="full-image"
-      #imageCanvas
-      (drag)="onDragged($event)"
-      (mouseup)="mouseDown = false"
-    ></canvas>
+    <lib-ngx-image-zoom
+      [thumbImage]="data.photo.urls.regular"
+      [fullImage]="data.photo.urls.full"
+      zoomMode="toggle"
+    ></lib-ngx-image-zoom>
   </div>
   <div id="buttonWrapper">
-    <button
-      type="button"
-      (click)="zoomIn()"
-      mat-icon-button
-      color="accent"
-      matTooltip="Más Zoom"
-      matTooltipPosition="above"
-    >
-      <mat-icon>zoom_in</mat-icon>
-    </button>
-    <button
-      type="button"
-      (click)="zoomOut()"
-      mat-icon-button
-      color="accent"
-      matTooltip="Menos Zoom"
-      matTooltipPosition="above"
-    >
-      <mat-icon>zoom_out</mat-icon>
-    </button>
+    <p><i>(Pulsa en la imagen para aumentar la resolucion)</i></p>
   </div>
   <h4>{{ data.photo.description }}</h4>
+  <h4>{{ data.photo.alt_description }}</h4>
   <div>
     <p>
       <mat-icon class="likes" color="primary">thumb_up</mat-icon>

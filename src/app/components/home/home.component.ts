@@ -26,7 +26,7 @@ export class HomeComponent {
 
     photos: Photo[] = [];
 
-    pageNumber = 0;
+    pageNumber = 1;
     pageSize = 20;
     scrollCallback!: () => ObservableInput<any>;
     query = '';
@@ -61,9 +61,9 @@ export class HomeComponent {
      * @memberof HomeComponent
      */
     public cancelSearch(cancel: boolean): void {
-        if (cancel) {
+        if (cancel && this.query !== '') {
             this.query = '';
-            this.pageNumber = 0;
+            this.pageNumber = 1;
             this.getPhotos(this.query, true).subscribe();
         }
     }
@@ -75,7 +75,7 @@ export class HomeComponent {
      */
     public getPhotos(query?: string, reset = false): Observable<Photo[]> {
         if (query && query !== this.query) {
-            this.pageNumber = 0;
+            this.pageNumber = 1;
             reset = true;
             this.query = query;
         }

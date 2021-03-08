@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { MaterialModule } from "../../../shared/modules/material.module";
 import { PhotoDetailComponent } from "./photo-detail/photo-detail.component";
 import { PhotoComponent } from "./photo.component";
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 /**
  * Module definition of photo
@@ -11,9 +12,10 @@ import { PhotoComponent } from "./photo.component";
  * @class PhotoModule
  */
 @NgModule({
-    imports:[
+    imports: [
         CommonModule,
-        MaterialModule
+        MaterialModule,
+        NgxImageZoomModule
     ],
     declarations: [
         PhotoComponent,
@@ -24,4 +26,4 @@ import { PhotoComponent } from "./photo.component";
         PhotoDetailComponent,
     ]
 })
-export class PhotoModule {}
+export class PhotoModule { }

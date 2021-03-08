@@ -9,9 +9,11 @@ import { InfiniteScrollDirective } from './infinite-scroll.directive';
  * @class GestureModule
  */
 @NgModule({
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+  ],
   declarations: [InfiniteScrollDirective],
   exports: [InfiniteScrollDirective],
   entryComponents: [],
 })
-export class GestureModule {}
+export class GestureModule { }

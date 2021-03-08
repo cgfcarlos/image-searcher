@@ -14,7 +14,7 @@ export class UserCollectionsComponent {
 
     collections: Collection[] = [];
 
-    pageNumber = 1;
+    pageNumber = 2;
     pageSize = 20;
     scrollCallback: () => ObservableInput<any>;
 

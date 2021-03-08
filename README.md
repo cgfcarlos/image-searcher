@@ -3,7 +3,7 @@
 Frontal angular que consume el api de [Unsplash](https://unsplash.com/) para mostrar imagenes mediante filtros y acceder a los perfiles publicos de los usuarios junto con sus fotos y colecciones.
 
 ## Demo
-Desplegada en GitHubPages, [url](https://cgfcarlos.github.io/image-searcher/home) 
+Desplegada en GitHubPages, [url](https://cgfcarlos.github.io/image-searcher/home).  
 En caso contrario clonar el repositorio instalar las dependencias desde la consola de comandos con un `npm i` y después un `ng serve`
 ## Tecnologías
 - Angular 11

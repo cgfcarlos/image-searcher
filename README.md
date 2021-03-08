@@ -36,6 +36,6 @@ La paginación de las imágenes se establece mediante una directiva `infinite-sc
 
 ## Posibles Mejoras
 
-- Implementación de manejo de estado de la aplicación mediante [NGRX](https://ngrx.io/) [Akita](https://datorama.github.io/akita/) o `Servicios + RxJx`...  
+- Implementación de manejo de estado de la aplicación mediante [NGRX](https://ngrx.io/), [Akita](https://datorama.github.io/akita/) o `Servicios + RxJx`  
 - Mejoras en el diseño y visualización de la página a si mismo como revisión de que sea full responsive  
 - Implementar más funcionalidades asociadas al API de Unsplash  

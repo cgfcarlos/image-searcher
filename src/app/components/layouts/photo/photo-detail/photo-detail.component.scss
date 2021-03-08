@@ -1,0 +1,23 @@
+.image-container {
+  text-align: center;
+
+  canvas.full-image {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+}
+
+#buttonWrapper {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.likes {
+  vertical-align: bottom;
+}
+
+.close {
+  display: flex;
+  flex-direction: row-reverse;
+}

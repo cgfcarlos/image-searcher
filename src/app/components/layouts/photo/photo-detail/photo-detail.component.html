@@ -1,0 +1,54 @@
+<div>
+  <div class="close">
+    <button mat-icon-button mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div>
+    <h4 mat-card-title>{{ data.photo.user.name }}</h4>
+    <h5 mat-card-subtitle>{{ data.photo.user.username }}</h5>
+  </div>
+  <div mat-dialog-content class="image-container">
+    <canvas
+      class="full-image"
+      #imageCanvas
+      (drag)="onDragged($event)"
+      (mouseup)="mouseDown = false"
+    ></canvas>
+  </div>
+  <div id="buttonWrapper">
+    <button
+      type="button"
+      (click)="zoomIn()"
+      mat-icon-button
+      color="accent"
+      matTooltip="Más Zoom"
+      matTooltipPosition="above"
+    >
+      <mat-icon>zoom_in</mat-icon>
+    </button>
+    <button
+      type="button"
+      (click)="zoomOut()"
+      mat-icon-button
+      color="accent"
+      matTooltip="Menos Zoom"
+      matTooltipPosition="above"
+    >
+      <mat-icon>zoom_out</mat-icon>
+    </button>
+  </div>
+  <h4>{{ data.photo.description }}</h4>
+  <div>
+    <p>
+      <mat-icon class="likes" color="primary">thumb_up</mat-icon>
+      {{ data.photo.likes }}
+    </p>
+    <p>Fecha: {{ data.photo.created_at | date: "dd/MM/yyyy HH:mm:ss" }}</p>
+    <mat-chip-list>
+      <mat-chip *ngFor="let category of data.photo.categories">
+        {{ category }}
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+</div>

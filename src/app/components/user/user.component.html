@@ -1,0 +1,84 @@
+<ng-container *ngIf="user$ | async as user; else loading">
+  <mat-toolbar color="primary" role="heading" class="mat-elevation-z5">
+    <a mat-icon-button routerLink="..">
+      <mat-icon>arrow_back</mat-icon>
+    </a>
+    <span>{{ user.username }}</span>
+  </mat-toolbar>
+  <div>
+    <div class="profile-info">
+      <div>
+        <div class="wrapper">
+          <div class="spacer">
+            <div class="profile-picture-container">
+              <div class="profile-picture-wrapper">
+                <div>
+                  <img
+                    [src]="user.profile_image.large"
+                    alt="Foto de perfil"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="spacer">
+            <div class="user-info-container">
+              <div class="user-info-wrapper">
+                <h1>{{ user.name }}</h1>
+              </div>
+              <div class="user-info-wrapper">
+                <div>
+                  {{ user.bio }}
+                </div>
+                <div class="extra-user-info">
+                  <div>{{ user.location }}</div>
+                  <div>{{ "Seguidores: " + user.followers_count }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav mat-tab-nav-bar class="nav">
+      <a
+        mat-tab-link
+        [routerLink]="['./photos', {id: user.username}]"
+        [matBadge]="user.total_photos"
+        matBadgeOverlap="false"
+        routerLinkActive
+        #photoRoute="routerLinkActive"
+        [active]="photoRoute.isActive"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+      Fotos
+      </a>
+      <a
+        mat-tab-link
+        [routerLink]="['./liked', {id: user.username}]"
+        [matBadge]="user.total_likes"
+        matBadgeOverlap="false"
+        routerLinkActive
+        #likedRoute="routerLinkActive"
+        [active]="likedRoute.isActive"
+      >
+      Likes
+      </a>
+      <a
+        mat-tab-link
+        [routerLink]="['./collections', {id: user.username}]"
+        [matBadge]="user.total_collections"
+        matBadgeOverlap="false"
+        routerLinkActive
+        #collectionRoute="routerLinkActive"
+        [active]="collectionRoute.isActive"
+      >
+      Colecciones
+      </a>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+</ng-container>
+<ng-template #loading>
+  <loading></loading>
+</ng-template>

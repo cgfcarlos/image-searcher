@@ -1,0 +1,13 @@
+<div
+  [class]="'os-toast ' + data.type"
+  [@fadeAnimation]="{
+    value: animationState,
+    params: { fadeIn: config.animation.fadeIn, fadeOut: config.animation.fadeOut }
+  }"
+  (@fadeAnimation.done)="onFadeFinished($event)"
+>
+  <div class="close" (click)="close()">
+    <mat-icon>close</mat-icon>
+  </div>
+  <div class="text">{{ data.text }}</div>
+</div>

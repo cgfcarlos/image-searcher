@@ -1,0 +1,66 @@
+@import "../../../theme.scss";
+
+.profile-info {
+  padding-top: 60px;
+  padding-bottom: 72px;
+  padding-left: 25px;
+  padding-right: 25px;
+  .wrapper {
+    display: flex;
+    &:before {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+    .spacer {
+      padding-bottom: 24px;
+      padding-top: 24px;
+      .profile-picture-container {
+        margin-left: auto;
+        margin-right: 32px;
+        .profile-picture-wrapper {
+          display: inline-block;
+          vertical-align: middle;
+          div {
+            position: relative;
+            img {
+              display: block;
+              border-radius: 50%;
+              overflow: hidden;
+              background-color: rgba(0, 0, 0, 0.1);
+              &:after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                content: "";
+                pointer-events: none;
+                border: 1px solid rgba(0,0,0,.05);
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+      }
+      .user-info-container {
+        margin-bottom: -16px; margin-left: 0;
+        .user-info-wrapper {
+            padding-bottom: 16px; padding-left: 0;
+        }
+        .extra-user-info {
+            padding-bottom: 16px;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  background-color: $blue-light;
+  a {
+    color: $black;
+  }
+}

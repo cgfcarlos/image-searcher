@@ -1,0 +1,41 @@
+<mat-card class="card-photo mat-elevation-z8">
+  <mat-card-header (click)="onProfileClicked.emit(photo.user.username)">
+    <div
+      class="avatar"
+      mat-card-avatar
+      [ngStyle]="{
+        'background-image': 'url(' + photo.user.profile_image.small + ')'
+      }"
+    ></div>
+    <mat-card-title>
+      {{ photo.user.username }}
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{ photo.user.name }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="image-container" (click)="openDetail(photo)">
+      <img
+        mat-card-image
+        [src]="photo.urls.regular"
+        [alt]="photo.alt_description"
+      />
+    </div>
+  </mat-card-content>
+  <!-- <mat-card-content>
+    <p>
+      {{ photo.description }}
+    </p>
+  </mat-card-content> -->
+  <!-- <mat-card-actions>
+    <button
+      mat-mini-fab
+      (click)="onDownload.emit(photo.links.download_location)"
+      target="_blank"
+      download
+    >
+    <mat-icon>download</mat-icon>
+  </button>
+  </mat-card-actions> -->
+</mat-card>

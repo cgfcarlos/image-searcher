@@ -1,0 +1,8 @@
+<ng-container *ngIf="collections$ | async as collections; else loading">
+    <div class="container">
+        <collection class="collection" *ngFor="let collection of collections" [collection]="collection"></collection>
+    </div>
+</ng-container>
+<ng-template #loading>
+    <div></div>
+</ng-template>

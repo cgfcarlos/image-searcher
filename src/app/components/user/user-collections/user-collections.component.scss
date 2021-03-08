@@ -1,0 +1,14 @@
+.container {
+  padding-top: 1em;
+  display: flex;
+  flex-direction: column;
+  .collection ::ng-deep {
+    height: 70vh;
+    margin: 0 auto;
+    mat-card {
+      img.mat-card-image {
+        height: 55vh !important;
+      }
+    }
+  }
+}

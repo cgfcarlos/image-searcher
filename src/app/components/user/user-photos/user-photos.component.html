@@ -1,0 +1,16 @@
+<ng-container *ngIf="photos">
+  <div class="container">
+    <photo
+      class="photo"
+      *ngFor="let photo of photos"
+      [photo]="photo"
+      infinite-scroll
+      [scrollCallback]="scrollCallback"
+      [immediateCallback]="false"
+      [scrollPercent]="90"
+    ></photo>
+  </div>
+</ng-container>
+<ng-template #loading>
+  <div></div>
+</ng-template>

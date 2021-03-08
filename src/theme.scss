@@ -1,0 +1,130 @@
+@import "~@angular/material/theming";
+
+$font-family: "Roboto, system-ui, -apple-ui, sans-serif";
+
+$white: #ffffff;
+$black: #222222;
+$gray-xdark: #595959;
+$gray: #666666;
+$gray-light: #bbbbbb;
+$gray-xlight: #eeeeee;
+$gray-xxlight: #f7f7f7;
+$blue: #5c88da;
+$blue-dark: #4f76bd;
+$blue-xdark: #3c598f;
+$blue-light: #cedbf4;
+$blue-xlight: #ebf1fb;
+$green: #00b388;
+$green-dark: #008566;
+$green-xdark: #00664e;
+$red: #ef3340;
+$red-dark: #d92e39;
+$red-xdark: #a8232c;
+$red-xlight: #fff2f3;
+$orange: #ff9e00;
+$orange-dark: #a86800;
+$orange-xdark: #7d4d00;
+$orange-xlight: #7d4d00;
+$navy: #2a17b1;
+$navy-dark: #1d107b;
+
+$custom-theme: (
+  is-dark: false,
+  primary:
+    mat-palette(
+      (
+        100: $blue-xlight,
+        300: $blue-light,
+        500: $blue,
+        700: $blue-dark,
+        contrast: (
+          100: $black,
+          500: white,
+          700: white,
+        ),
+      )
+    ),
+  accent:
+    mat-palette(
+      (
+        100: $green,
+        500: $green,
+        700: $green-dark,
+        contrast: (
+          100: white,
+          500: white,
+          700: white,
+        ),
+      )
+    ),
+  warn:
+    mat-palette(
+      (
+        100: $red,
+        500: $red,
+        700: $red-dark,
+        contrast: (
+          100: white,
+          500: white,
+          700: white,
+        ),
+      )
+    ),
+  foreground: (
+    base: $black,
+    text: $black,
+    link: $blue-dark,
+    secondary-text: $gray,
+    hint-text: $gray,
+    tabs: $gray,
+    icon: $gray,
+    icons: $gray,
+    selected-button: $black,
+    disabled: $gray-light,
+    disabled-button: $gray-light,
+    disabled-text: $gray-light,
+    disabled-icon: $gray-xlight,
+    divider: $gray-light,
+    dividers: $gray-light,
+    slider-min: $gray,
+    slider-off: $gray-light,
+    slider-off-active: $gray-light,
+  ),
+  background: (
+    status-bar: pink,
+    app-bar: white,
+    background: white,
+    hover: rgba(black, 0.05),
+    card: white,
+    dialog: white,
+    tooltip: $blue,
+    disabled-button: $gray-xlight,
+    raised-button: white,
+    focused-button: rgba(black, 0.1),
+    selected-button: $gray-xlight,
+    selected-disabled-button: $gray-xlight,
+    disabled-button-toggle: white,
+    unselected-chip: $gray-xlight,
+    disabled-list-option: $gray-light,
+  ),
+);
+
+$custom-typography: (
+  font-family: $font-family,
+  display-4: mat-typography-level(112px, 1, 300, $font-family),
+  display-3: mat-typography-level(56px, 1, 400, $font-family),
+  display-2: mat-typography-level(48px, 1, 400, $font-family),
+  display-1: mat-typography-level(36px, 1.1, 400, $font-family),
+  headline: mat-typography-level(24px, 1.3, 400, $font-family),
+  title: mat-typography-level(20px, 1.6, 600, $font-family),
+  subheading-2: mat-typography-level(16px, 1.7, 400, $font-family),
+  subheading-1: mat-typography-level(16px, 1.6, 600, $font-family),
+  body-2: mat-typography-level(14px, 1.7, 600, $font-family),
+  body-1: mat-typography-level(16px, 1.4, 400, $font-family),
+  caption: mat-typography-level(12px, 1.6, 400, $font-family),
+  button: mat-typography-level(14px, 1, 600, $font-family),
+  input: mat-typography-level(16px, 1.125, 400, $font-family),
+);
+
+@include mat-core($custom-typography);
+@include angular-material-theme($custom-theme);

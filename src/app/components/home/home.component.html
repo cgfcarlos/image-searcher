@@ -1,0 +1,22 @@
+<toolbar
+  (searchEvent)="getPhotos($event).subscribe()"
+  (cancelEvent)="cancelSearch($event)"
+></toolbar>
+
+<div
+  class="grid-container"
+  *ngIf="photos; else loading"
+  infinite-scroll
+  [scrollCallback]="scrollCallback"
+  [immediateCallback]="true"
+  [scrollPercent]="80"
+>
+  <mat-grid-list [cols]="cols" rowHeight="500px">
+    <mat-grid-tile *ngFor="let photo of photos">
+      <photo [photo]="photo" (onProfileClicked)="goToUserProfile($event)"></photo>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<ng-template #loading>
+  <loading></loading>
+</ng-template>
